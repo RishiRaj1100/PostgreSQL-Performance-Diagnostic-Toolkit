@@ -92,7 +92,8 @@ SELECT * FROM diagnostic_log ORDER BY checked_at DESC;
 SELECT * FROM diagnostic_log WHERE severity = 'CRITICAL';
 ```
 
-## Security And Repo Hygiene
-- No personal credentials are committed.
-- Use .env for local secrets.
-- results/ and *.log are ignored by git.
+## Data Privacy And Commit Policy
+- Secrets are never committed. Keep runtime credentials only in local environment files.
+- Use .env.example as the template and create your own local .env for execution.
+- Runtime artifacts are excluded from version control: results/ and *.log.
+- Before every push, verify staged files to ensure no machine-specific or sensitive data is included.
